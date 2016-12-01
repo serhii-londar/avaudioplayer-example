@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsc-BJ-pVs">
+                                <rect key="frame" x="137" y="313" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Rpg-ed-OUO"/>
+                                    <constraint firstAttribute="width" constant="100" id="Z0f-BX-FTA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B1i-hu-OoB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume: 50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5W-31-vtQ">
+                                <rect key="frame" x="137.5" y="373" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate: 1x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuU-dW-YgZ">
+                                <rect key="frame" x="157.5" y="452" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mKm-a0-Uuf">
+                                <rect key="frame" x="64" y="402" width="247" height="31"/>
+                                <connections>
+                                    <action selector="adjustVol:" destination="BYZ-38-t0r" eventType="valueChanged" id="SRO-M6-efX"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="a5p-3G-lUj">
+                                <rect key="frame" x="64" y="481" width="247" height="31"/>
+                                <connections>
+                                    <action selector="chandeRate:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Am-uQ-O18"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tsc-BJ-pVs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D7c-BY-Eim"/>
+                            <constraint firstItem="QuU-dW-YgZ" firstAttribute="top" secondItem="mKm-a0-Uuf" secondAttribute="bottom" constant="20" id="JCU-1i-fuZ"/>
+                            <constraint firstItem="mKm-a0-Uuf" firstAttribute="top" secondItem="n5W-31-vtQ" secondAttribute="bottom" constant="8" id="PZl-R1-1X9"/>
+                            <constraint firstItem="a5p-3G-lUj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="Sc5-xt-IOv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mKm-a0-Uuf" secondAttribute="trailing" constant="50" id="ZTa-we-DIu"/>
+                            <constraint firstItem="mKm-a0-Uuf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="ZvY-QJ-WBm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a5p-3G-lUj" secondAttribute="trailing" constant="50" id="dP7-DZ-slU"/>
+                            <constraint firstItem="QuU-dW-YgZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dcm-bG-MT8"/>
+                            <constraint firstItem="n5W-31-vtQ" firstAttribute="top" secondItem="tsc-BJ-pVs" secondAttribute="bottom" constant="20" id="dnM-Io-1Vz"/>
+                            <constraint firstItem="a5p-3G-lUj" firstAttribute="top" secondItem="QuU-dW-YgZ" secondAttribute="bottom" constant="8" id="nlw-66-uMA"/>
+                            <constraint firstItem="tsc-BJ-pVs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tQw-M2-8tx"/>
+                            <constraint firstItem="n5W-31-vtQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xDE-j8-uLV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_rateLabel" destination="QuU-dW-YgZ" id="h3Z-6D-AjT"/>
+                        <outlet property="_volumeLabel" destination="n5W-31-vtQ" id="qqA-gL-wYX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+</document>
