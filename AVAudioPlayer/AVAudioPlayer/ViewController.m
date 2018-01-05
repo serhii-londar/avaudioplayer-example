@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
+@import MediaPlayer;
 
 @interface ViewController (){
     IBOutlet UILabel *_volumeLabel;
@@ -20,8 +21,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[AVAudioSession sharedInstance] outputVolume];
+    
+    
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    MPVolumeView *volumeView = [MPVolumeView new];
+    for (UIView *view in volumeView.subviews){
+        if ([view isKindOfClass:[UISlider class]]) {
+            UISlider *volumeSlider = (UISlider *)view;
+            volumeSlider.value = 1.0f;
+            break;
+        }
+    }
     // Do any additional setup after loading the view, typically from a nib.
-    NSString *path = [NSString stringWithFormat:@"%@/test.m4a", [[NSBundle mainBundle] resourcePath]];
+    NSString *path = [NSString stringWithFormat:@"%@/mozart_23_piano_orchestra.mp3", [[NSBundle mainBundle] resourcePath]];
     NSURL *soundUrl = [NSURL fileURLWithPath:path];
     
     NSError *error;
@@ -32,9 +46,9 @@
         NSLog(@"Error in audioPlayer: %@", [error localizedDescription]);
     } else {
         [_audioPlayer prepareToPlay];
-        _audioPlayer.enableRate = YES;
-        _audioPlayer.volume = 0.5f;
-        _audioPlayer.rate = 1.0f;
+        //_audioPlayer.enableRate = YES;
+        //_audioPlayer.volume = 0.5f;
+        //_audioPlayer.rate = 1.0f;
     }
 }
 
